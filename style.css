@@ -12,14 +12,14 @@ body {
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
-  padding: 1.5rem 1rem;
+  padding: 1rem 0.5rem; /* giảm padding */
 }
 
 /* --- HEADING --- */
 h1 {
   color: #000CAD;
-  margin-bottom: 1.5rem;
-  font-size: 2.6rem;
+  margin-bottom: 1rem; /* giảm khoảng cách */
+  font-size: 2.4rem;
   text-align: center;
   font-weight: 700;
   letter-spacing: 1px;
@@ -28,28 +28,27 @@ h1 {
 /* --- LEVEL SECTION --- */
 .level {
   width: 100%;
-  max-width: 1300px; /* đồng nhất với .cards */
-  margin: 2rem auto;
+  max-width: 1300px;
+  margin: 1.2rem auto; /* giảm khoảng cách giữa các level */
 }
 
 /* --- GRID LAYOUT --- */
 .cards {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 1.8rem;
   justify-items: center;
-  padding: 0 1rem; /* chừa 2 bên */
+  padding: 0 0.5rem; /* chừa nhẹ hai bên */
   width: 100%;
   box-sizing: border-box;
 }
 
 /* --- FLIP CARD --- */
 .flip-card {
-  width: 240px;
-  height: 210px;
+  width: 190px; /* hơi thu nhỏ lại để vừa 5 cột */
+  height: 170px;
   perspective: 1000px;
   cursor: pointer;
-  border-radius: 16px;
+  border-radius: 14px;
   transition: transform 0.3s ease;
 }
 
@@ -72,7 +71,7 @@ h1 {
   position: absolute;
   width: 100%;
   height: 100%;
-  border-radius: 16px;
+  border-radius: 14px;
   backface-visibility: hidden;
   display: flex;
   flex-direction: column;
@@ -80,16 +79,16 @@ h1 {
   align-items: center;
   font-weight: 500;
   text-align: center;
-  padding: 1rem;
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+  padding: 0.8rem;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.18);
 }
 
 /* --- FRONT --- */
 .flip-card-front {
-  font-size: 3rem;
+  font-size: 2.6rem;
   color: #fff;
-  letter-spacing: 1px;
-  transform: translateZ(30px);
+  letter-spacing: 0.8px;
+  transform: translateZ(25px);
   transition: all 0.3s ease;
 }
 
@@ -97,8 +96,8 @@ h1 {
 .flip-card-back {
   transform: rotateY(180deg);
   color: #0f172a;
-  font-size: 1.05rem;
-  line-height: 1.5rem;
+  font-size: 1rem;
+  line-height: 1.4rem;
   animation: fadeIn 0.6s ease;
 }
 
@@ -115,20 +114,20 @@ h1 {
 /* --- TEXT --- */
 .question {
   font-weight: 700;
-  margin-bottom: 0.8rem;
-  font-size: 1.1rem;
+  margin-bottom: 0.6rem;
+  font-size: 1.05rem;
 }
 
 .challenge {
   font-style: italic;
   color: #374151;
-  font-size: 1rem;
+  font-size: 0.95rem;
 }
 
 /* --- HOVER EFFECT --- */
 .flip-card:hover {
-  transform: scale(1.05) rotateX(5deg);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+  transform: scale(1.04) rotateX(4deg);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.22);
 }
 
 /* --- ANIMATION --- */
@@ -148,6 +147,6 @@ h1 {
 
 @media (max-width: 600px) {
   .cards { grid-template-columns: repeat(2, 1fr); }
-  .flip-card { width: 160px; height: 160px; }
-  .level h2 { font-size: 1.4rem; }
+  .flip-card { width: 150px; height: 150px; }
+  .level h2 { font-size: 1.3rem; }
 }
